@@ -14,6 +14,9 @@ def count_mondays(valid_element):
     current_date = dt.now()
     valid_element_date = dt.strptime(valid_element, "%Y.%m.%d")
 
+    if valid_element_date > current_date:
+        valid_element_date, current_date = current_date, valid_element_date
+
     num_days = (current_date - valid_element_date).days
     num_mondays = 0
 
